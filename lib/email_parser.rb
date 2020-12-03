@@ -10,6 +10,13 @@ class EmailAddressParser
   end 
   
   def parse 
-    return @email_address.split(/[,\s]+/)
+    adress_array = @email_address.split(/[,\s]+/)
+    out_array = []
+    adress_array.each do |address|
+      if(!out_array.include?(address))
+        out_array.push(address)
+      end 
+    end 
+    return out_array
   end 
 end
